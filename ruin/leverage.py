@@ -45,7 +45,11 @@ def margin_loan(r: np.ndarray, rf: np.ndarray, L: float, maintenance: float = 0.
 
     For L > 1 (long with a loan): position value V, debt D grows at rf + spread, equity E = V - D.
     For L < 0 (short sale of |L| units per unit of equity): liability S follows the asset, cash C = 1 + |L|
-    grows at rf, equity E = C - S. A margin call is triggered when E / gross exposure < ``maintenance``.
+    grows at rf, equity E = C - S. With total-return data the short is a short of an accumulating (total-return)
+    instrument: dividends owed are treated as reinvested in the liability rather than paid from cash, which slightly
+    overstates the liability (and makes margin calls slightly earlier) compared with a short of ordinary shares.
+    The cash, including the short-sale proceeds, earns the risk-free rate (an institutional rebate; retail
+    accounts often earn less). A margin call is triggered when E / gross exposure < ``maintenance``.
     action='close': the position is closed at that close (the investor is forced out and keeps E).
     action='restore': the position is cut back to the original leverage L at that close (losses are locked in).
     """

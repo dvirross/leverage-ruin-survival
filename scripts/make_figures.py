@@ -774,7 +774,7 @@ def fig8():
          "marker": {"size": 10, "color": [PURPLE, ORANGE, GOLD], "line": {"color": "white", "width": 2}}, "hoverinfo": "skip",
          "showlegend": False},
     ]
-    head = "The bubble burst, but a short sold in December 1996 never got back to its entry price"
+    head = "The bubble burst, but the market never fell back to where the December 1996 short was sold"
     sub = (f"US total-return index relative to the close of {fdate(entry)} (= 1); shaded: the short would be under water; "
            f"it last stood at or below 1 on {fdate(last_below)}")
     sub_n = f"US total-return index, 5 Dec 1996 = 1;<br>shaded: a 1× short would be under water"
@@ -789,7 +789,7 @@ def fig8():
                   dstr(low), float(x.loc[low]), 24 if not narrow else 0, 40 if not narrow else 40, anchor="left" if not narrow else "center", color=GOLD),
             note("Entry: 1", dstr(x.index[0]), 1, anchor="left", yanchor="top", yshift=-6, xshift=4, color=INK, size=11),
         ]
-        return base_layout(head if not narrow else "The bubble burst, but the short<br>never got back to its entry price",
+        return base_layout(head if not narrow else "The bubble burst, but the market never<br>fell back to the short's entry",
                            sub if not narrow else sub_n, 500,
                            {"l": 56, "r": 36, "t": 84, "b": 56} if not narrow else {"l": 44, "r": 12, "t": 180, "b": 50},
                            showlegend=narrow, narrow=narrow,
