@@ -1,0 +1,2 @@
+first_date,last_date,max_drawdown,peak_date,trough_date,recovery_date,years_peak_to_trough,years_peak_to_recovery,longest_underwater_days,longest_underwater_start,longest_underwater_end,index_end_vs_start,drawdown_at_last_date
+1990-07-02,2026-09-30,-0.598238695116768,2000-01-03,2003-04-28,2006-05-08,3.3155373032169746,6.3436002737850785,2296,2006-05-10,2015-02-25,3.2233080175617217,-0.01801040870149173
